@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olá fulano!"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/buttonInserir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:width="200dp"
+        android:layout_marginBottom="10dp"
+        android:text="Novo"
+        android:onClick="carregarItemMenu"/>
+
+    <Button
+        android:id="@+id/buttonBuscarPorData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:width="200dp"
+        android:text="Buscar por data"
+        android:onClick="carregarItemMenu"/>
+
+</LinearLayout>
