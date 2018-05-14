@@ -12,13 +12,14 @@ import com.agenda.compromissos.Model.Compromisso;
 @Database(entities = {Compromisso.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
-    public abstract CompromissoDAO compromissoDAO();
     private static AppDatabase INSTANCE;
+
+    public abstract CompromissoDAO compromissoDAO();
 
     public static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, "compromisso_db").allowMainThreadQueries()
+                    AppDatabase.class, "compromisso-db").fallbackToDestructiveMigration().allowMainThreadQueries()
                     .build();
         }
         return INSTANCE;

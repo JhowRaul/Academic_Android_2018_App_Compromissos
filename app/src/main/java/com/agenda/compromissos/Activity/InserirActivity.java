@@ -26,6 +26,8 @@ public class InserirActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserir);
 
+        AppDatabase appDatabase = AppDatabase.getDatabase(this);
+
         editTitulo = (EditText) findViewById(R.id.editTitulo);
         editDescricao = (EditText) findViewById(R.id.editDescricao);
         editData = (EditText) findViewById(R.id.editData);
@@ -34,6 +36,7 @@ public class InserirActivity extends Activity {
 
     public void gravarCompromisso(View v) {
         Compromisso compromisso = new Compromisso();
+        AppDatabase appDatabase = AppDatabase.getDatabase(this);
 
         String titulo = editTitulo.getText().toString();
         String descricao = editDescricao.getText().toString();
@@ -46,7 +49,7 @@ public class InserirActivity extends Activity {
         compromisso.setImportancia(Integer.parseInt(importancia));
         compromisso.setRealizado(Integer.parseInt("0"));
 
-        long result = AppDatabase.getDatabase(getApplicationContext()).compromissoDAO().insertCompromisso(compromisso);
+        long result = appDatabase.compromissoDAO().insertCompromisso(compromisso);
         if(result > 0) {
             Toast.makeText(this, "Compromisso adicionado com sucesso.", Toast.LENGTH_LONG).show();
             editTitulo.setText("");

@@ -2,6 +2,7 @@ package com.agenda.compromissos.Model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 /*Para o Room, a anotação @Entity inidica que a classe é mapeada para uma tabela em banco de dados*/
@@ -68,9 +69,11 @@ public class Compromisso {
         this.realizado = realizado;
     }
 
+    @Ignore
     public Compromisso() {
 
     }
+
 
     public Compromisso(long ID, String titulo, String descricao, String dataCompromisso, int importancia, int realizado) {
         this.ID = ID;
