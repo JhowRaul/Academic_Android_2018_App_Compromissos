@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.agenda.compromissos.R;
+import com.facebook.stetho.Stetho;
 
 public class MainActivity extends Activity {
 
@@ -14,6 +15,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Stetho.initializeWithDefaults(this);
     }
 
     public void carregarItemMenu(View v) {
